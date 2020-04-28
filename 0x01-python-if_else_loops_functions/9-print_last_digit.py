@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 def print_last_digit(number):
     sign = 1
     if number < 0:
