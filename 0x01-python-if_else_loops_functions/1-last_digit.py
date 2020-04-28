@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-last = number % 10
+sign = 1
+if number < 0:
+    sign = (-1)
+last = (sign * number % 10) * sign
 if last > 5:
     flag = 'and is greater than 5'
 elif last == 0:
