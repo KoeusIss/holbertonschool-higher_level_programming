@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-import string
-for a in string.ascii_lowercase:
-    print(a, end='')
+for a in range(97, 97 + 26):
+    print("{}".format(chr(a)), end='')
