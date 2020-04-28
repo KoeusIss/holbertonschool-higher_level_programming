@@ -8,5 +8,4 @@ def remove_char_at(astr, n):
         else:
             c_str = c_str + c
         i = i + 1
-    print(c_str)
     return c_str
