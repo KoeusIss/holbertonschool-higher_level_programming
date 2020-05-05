@@ -9,5 +9,7 @@ def print_matrix_integer(matrix=[[]]):
     Returns:
         Nothing, just print out the matrix
     """
-    for i in matrix:
-        print(*i)
+    for item in matrix:
+        l = len(item)
+        for i in range(l):
+            print("{}".format(item[i]), end="\n" if i == l - 1 else " ")
