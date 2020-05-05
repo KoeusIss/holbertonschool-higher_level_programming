@@ -1,23 +1,5 @@
 #include "lists.h"
 /**
- * list_len - returns the length of a linked list
- * @head: a pointer to a linked list
- *
- * Return: (Success) the length of the list as integer
- * ------- (Fail) return a negative number
- */
-size_t list_len(listint_t *head)
-{
-	size_t length = 0;
-
-	while (head)
-	{
-		length++;
-		head = head->next;
-	}
-	return (length);
-}
-/**
  * is_palindrome - checks if a linked list in palindrome
  * @head: a pointer the linked list
  *
@@ -26,26 +8,22 @@ size_t list_len(listint_t *head)
  */
 int is_palindrome(listint_t **head)
 {
-	int *array;
-	size_t length, i = 0;
-	listint_t *cursor;
+	listint_t *cursor, *start, *end;
 
-	if (*head == NULL)
-		return (1);
-	length = list_len(*head);
-	array = malloc(length * sizeof(int));
-	if (array == NULL)
-		return (0);
-	while (cursor)
+	start = *head;
+	while (start != end)
 	{
-		array[i++] = cursor->n;
-		cursor = cursor->next;
-	}
-	for (i = 0; i < length / 2; i++)
-	{
-		if (array[i] != array[length - 1 - i])
+		cursor = start;
+		while (cursor->next && cursor->next != end)
+		{
+			cursor = cursor->next;
+		}
+		end = cursor;
+		if (start->n != end->n)
 			return (0);
+		if (start == end)
+			break;
+		start = start->next;
 	}
-	free(array);
 	return (1);
 }
