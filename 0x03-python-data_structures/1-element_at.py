@@ -12,7 +12,7 @@ def element_at(my_list, idx):
         None: if idx out of range
         List item at idx: if succeed
     """
-    if idx < 0 or idx > len(my_list):
+    if idx < 0 or idx > len(my_list) - 1:
         return None
     else:
         return my_list[idx]
