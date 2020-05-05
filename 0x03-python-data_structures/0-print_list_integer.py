@@ -9,5 +9,5 @@ def print_list_integer(my_list=[]):
     Returns:
         Nothing, just print out the list
     """
-    for i in my_list:
-        print('{}'.format(i))
+    for item in my_list:
+        print('{:d}'.format(item))
