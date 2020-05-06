@@ -8,7 +8,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *cursor, *start, *end;
+	listint_t *cursor = NULL, *start = NULL, *end = NULL;
 	
 	if (*head == NULL)
 		return (1);
