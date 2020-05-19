@@ -66,7 +66,6 @@ class Square:
 
         """
         for i in range(0, self.__size):
-            if self.__size == 0:
-                print()
-            else:
-                print('#'*self.__size)
+            print('#'*self.__size)
+        else:
+            print()
