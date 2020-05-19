@@ -65,7 +65,8 @@ class Square:
         Prints the square forming by '#' symbol
 
         """
-        for i in range(0, self.__size):
-            print('#'*self.__size)
-        else:
+        if self.__size == 0:
             print()
+        else:
+            for i in range(0, self.__size):
+                print('#'*self.__size)
