@@ -24,7 +24,7 @@ class Node:
 
         """
         self.data = data
-        self.next_node = next_node
+        self.next_node = None
 
     @property
     def data(self):
