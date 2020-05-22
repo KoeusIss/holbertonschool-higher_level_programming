@@ -16,12 +16,12 @@ It should print out the 'My name is <first_name> <last_name>'
 It should work fine if we does'nt pass last_name
 
     >>> say_my_name('issam')
-    My name is issam
+    My name is issam 
 
 It should ignore space if we pass empty first_name
 
     >>> say_my_name('', 'sebri')
-    My name is sebri
+    My name is  sebri
 
 It should raise exception if we pass somthing other than string for first_name
 
