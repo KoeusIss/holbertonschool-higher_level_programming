@@ -19,12 +19,56 @@ It should print nothing if the 'text' is empty
 
     >>> text_indentation("")
 
-It should tokenize a given string based on '.', ':' and '?' seperator
+It should tokenize a given string based on '.' seperator
 
-    >>> text_indentation("hello world. from the other side of the moon\
-    ... we sent you our greeting? do you enjoyit or: sad, happy, anything.")
-    hello world.
-    from the other side of the moon we sent you our greeting?
-    do you enjoyit or:
-    sad, happy, anythong.
+    >>> text_indentation("Lorem ipsum dolor sit amet consectetur. Hello ipsum.")
+    Lorem ipsum dolor sit amet consectetur.
+    <BLANKLINE>
+    Hello ipsum.
 
+It should tokenize a given string based on '.' seperator with space
+
+    >>> text_indentation("Lorem ipsum dolor sit amet consectetur. \
+    ...                           Hello ipsum.")
+    Lorem ipsum dolor sit amet consectetur.
+    <BLANKLINE>
+    Hello ipsum.
+
+It should tokenize a given string based on ':' seperator
+
+    >>> text_indentation("Lorem ipsum dolor sit amet consectetur: Hello ipsum.")
+    Lorem ipsum dolor sit amet consectetur:
+    <BLANKLINE>
+    Hello ipsum.
+
+It should tokenize a given string based on ':' seperator with space
+
+    >>> text_indentation("Lorem ipsum dolor sit amet consectetur: \
+    ...                           Hello ipsum.")
+    Lorem ipsum dolor sit amet consectetur:
+    <BLANKLINE>
+    Hello ipsum.
+
+It should tokenize a given string based on '?' seperator
+
+    >>> text_indentation("Lorem ipsum dolor sit amet consectetur? Hello ipsum.")
+    Lorem ipsum dolor sit amet consectetur?
+    <BLANKLINE>
+    Hello ipsum.
+
+It should tokenize a given string based on '?' seperator with space
+
+    >>> text_indentation("Lorem ipsum dolor sit amet consectetur? \
+    ...                           Hello ipsum.")
+    Lorem ipsum dolor sit amet consectetur?
+    <BLANKLINE>
+    Hello ipsum.
+
+It should tokenize a given string based on multiple seperator
+
+    >>> text_indentation("Lorem ipsum dolor? sit amet consectetur: Hello ipsum.")
+    Lorem ipsum dolor?
+    <BLANKLINE>
+    sit amet consectetur:
+    <BLANKLINE>
+    Hello ipsum.
