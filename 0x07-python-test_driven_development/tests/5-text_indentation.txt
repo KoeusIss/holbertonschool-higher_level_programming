@@ -25,6 +25,7 @@ It should tokenize a given string based on '.' seperator
     Lorem ipsum dolor sit amet consectetur.
     <BLANKLINE>
     Hello ipsum.
+    <BLANKLINE>
 
 It should tokenize a given string based on '.' seperator with space
 
@@ -33,6 +34,7 @@ It should tokenize a given string based on '.' seperator with space
     Lorem ipsum dolor sit amet consectetur.
     <BLANKLINE>
     Hello ipsum.
+    <BLANKLINE>
 
 It should tokenize a given string based on ':' seperator
 
@@ -40,6 +42,7 @@ It should tokenize a given string based on ':' seperator
     Lorem ipsum dolor sit amet consectetur:
     <BLANKLINE>
     Hello ipsum.
+    <BLANKLINE>
 
 It should tokenize a given string based on ':' seperator with space
 
@@ -48,6 +51,7 @@ It should tokenize a given string based on ':' seperator with space
     Lorem ipsum dolor sit amet consectetur:
     <BLANKLINE>
     Hello ipsum.
+    <BLANKLINE>
 
 It should tokenize a given string based on '?' seperator
 
@@ -55,6 +59,7 @@ It should tokenize a given string based on '?' seperator
     Lorem ipsum dolor sit amet consectetur?
     <BLANKLINE>
     Hello ipsum.
+    <BLANKLINE>
 
 It should tokenize a given string based on '?' seperator with space
 
@@ -63,6 +68,7 @@ It should tokenize a given string based on '?' seperator with space
     Lorem ipsum dolor sit amet consectetur?
     <BLANKLINE>
     Hello ipsum.
+    <BLANKLINE>
 
 It should tokenize a given string based on multiple seperator
 
@@ -72,3 +78,4 @@ It should tokenize a given string based on multiple seperator
     sit amet consectetur:
     <BLANKLINE>
     Hello ipsum.
+    <BLANKLINE>
