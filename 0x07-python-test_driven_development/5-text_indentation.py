@@ -27,4 +27,3 @@ def text_indentation(text):
             print(string.lstrip(), end="\n\n")
             string = ""
     print(string.lstrip(), end='')
-
