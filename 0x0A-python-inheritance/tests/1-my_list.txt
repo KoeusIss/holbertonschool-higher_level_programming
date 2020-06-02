@@ -26,7 +26,7 @@ It should appear the print_sorted in the instance method
     >>> type(MyList.__dict__['print_sorted'])
     <class 'function'>
 
-It should behave  a value to the lst
+It should beave normally
 
     >>> lst = MyList()
     >>> lst.print_sorted()
@@ -37,10 +37,29 @@ It should append a value to the lst
     >>> lst = MyList()
     >>> lst.append(1)
 
-It should append a value to the lst
+it should print the right form
 
     >>> lst = MyList()
+    >>> lst.append(4)
+    >>> lst.append(3)
     >>> lst.append(1)
+    >>> lst.append(5)
+    >>> lst.append(2)
+    >>> lst.print_sorted()
+    [1, 2, 3, 4, 5]
+
+it should conserve the original list
+
+    >>> lst = MyList()
+    >>> lst.append(4)
+    >>> lst.append(3)
+    >>> lst.append(1)
+    >>> lst.append(5)
+    >>> lst.append(2)
+    >>> lst.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(lst)
+    [4, 3, 1, 5, 2]
 
 It should return the same when is ordered
 
