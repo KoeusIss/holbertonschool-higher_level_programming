@@ -1,0 +1,58 @@
+Module ``Base Geometry``
+===============================================================================
+
+Using ``BaseGeometry``
+-------------------------------------------------------------------------------
+
+Import the ``BaseGeometry`` class
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+It should create properly an instance of BaseGeometry
+
+    >>> bg = BaseGeometry()
+
+It should raise an exception calling the area() method
+
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
+
+It should raise a TypeError exception when value is not an integer
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("Integer", "Five")
+    Traceback (most recent call last):
+        ...
+    TypeError: Integer must be an integer
+
+It should raise a TypeError exception when value is instance of integer
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("Integer", True)
+    Traceback (most recent call last):
+        ...
+    TypeError: Integer must be an integer
+
+It should raise a ValueError exception when value is less than 0
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("Integer", -1)
+    Traceback (most recent call last):
+        ...
+    ValueError: Integer must be greater than 0
+
+It should raise a ValueError exception when value is equal to 0
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("Integer", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: Integer must be greater than 0
+
+It should return nothing when passing a proper arguments
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("Integer", 5)
