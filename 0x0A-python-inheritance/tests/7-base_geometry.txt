@@ -28,6 +28,14 @@ It should raise an exception if missing args
         ...
     TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
+It should raise an exception if args exceed
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator(1, 1, 1)
+    Traceback (most recent call last):
+        ...
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
 It should raise a TypeError exception when value is not an integer
 
     >>> bg = BaseGeometry()
