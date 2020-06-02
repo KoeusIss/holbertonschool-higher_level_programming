@@ -112,3 +112,8 @@ Using ``BaseGeometry``
 
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("Integer", 5)
+
+15 - It should return nothing when passing a None name
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator(None, 5)
