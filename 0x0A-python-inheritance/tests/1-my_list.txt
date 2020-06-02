@@ -15,6 +15,12 @@ It should create successfully an instance of MyList
     >>> isinstance(lst, MyList)
     True
 
+It should create successfully an instance of MyList
+
+    >>> lst = MyList()
+    >>> type(lst) ==  MyList
+    True
+
 It should append a value to the lst
 
     >>> lst = MyList()
