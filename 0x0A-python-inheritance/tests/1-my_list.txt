@@ -12,6 +12,8 @@ Import `print_sorted` from `1-my_list`
 It should create successfully an instance of MyList
 
     >>> lst = MyList()
+    >>> isinstance(lst, MyList)
+    True
 
 It should append a value to the lst
 
@@ -41,3 +43,18 @@ it should conserve the original list
     [1, 2, 3, 4, 5]
     >>> print(lst)
     [4, 3, 1, 5, 2]
+
+It should return the same when is ordered
+
+    >>> lst = MyList([-1, 0, 1, 3, 1999])
+    >>> lst.print_sorted()
+    [-1, 0, 1, 3, 1999]
+
+It should return the same when is ordered
+
+    >>> lst = MyList([2000, -1986, 1987, -1, 3, 1999])
+    >>> l = lst
+    >>> lst.print_sorted()
+    [-1986, -1, 3, 1987, 1999, 2000]
+    >>> l is lst
+    True
