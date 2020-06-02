@@ -26,6 +26,12 @@ It should appear the print_sorted in the instance method
     >>> type(MyList.__dict__['print_sorted'])
     <class 'function'>
 
+It should behave  a value to the lst
+
+    >>> lst = MyList()
+    >>> lst.print_sorted()
+    []
+
 It should append a value to the lst
 
     >>> lst = MyList()
