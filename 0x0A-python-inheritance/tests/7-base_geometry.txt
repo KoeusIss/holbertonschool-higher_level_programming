@@ -113,7 +113,10 @@ Using ``BaseGeometry``
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("Integer", 5)
 
-15 - It should return nothing when passing a None name
+15 - It should raise a TypeError exception when value is float
 
     >>> bg = BaseGeometry()
-    >>> bg.integer_validator(None, 5)
+    >>> bg.integer_validator("Float", 5.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: Float must be an integer
