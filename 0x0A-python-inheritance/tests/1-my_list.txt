@@ -15,11 +15,16 @@ It should create successfully an instance of MyList
     >>> isinstance(lst, MyList)
     True
 
-It should create successfully an instance of MyList
+It should create successfully the right type MyList
 
     >>> lst = MyList()
     >>> type(lst) ==  MyList
     True
+
+It should appear the print_sorted in the instance method
+
+    >>> type(MyList.__dict__['print_sorted'])
+    <class 'function'>
 
 It should append a value to the lst
 
