@@ -44,6 +44,14 @@ It should raise a TypeError exception when value is not an integer
         ...
     TypeError: Integer must be an integer
 
+It should raise a TypeError exception when value is not an integer
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("Integer", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: Integer must be an integer
+
 It should raise a TypeError exception when value is instance of integer
 
     >>> bg = BaseGeometry()
