@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Is inheerit from module"""
+
 
 def inherits_from(obj, a_class):
     """Returns if the object is an instance of a the given class
