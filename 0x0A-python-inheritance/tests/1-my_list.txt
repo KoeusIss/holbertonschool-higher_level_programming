@@ -29,7 +29,7 @@ It should appear the print_sorted in the instance method
 It should behave correctly with empty list
 
     >>> lst = MyList()
-    >>> lst.printed_sorted()
+    >>> lst.print_sorted()
     []
 
 It should append a value to the lst
