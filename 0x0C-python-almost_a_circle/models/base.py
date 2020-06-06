@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Models Module"""
+"""Base Module"""
 
 
 class Base:
@@ -7,17 +7,20 @@ class Base:
 
     Attributes:
         __nb_objects (int): class private attribute
+        id (int): public instance attribute
+
     """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        self.id = id
+        """Initializer
 
-    @property
-    def id(self):
-        return self.__id
+        Args:
+            id (int): objects id
 
-    @id.setter
-    def id(self, value):
-        __n_objects += 1
-        self.__id = value
+        """
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
