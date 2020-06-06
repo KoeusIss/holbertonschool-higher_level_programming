@@ -122,3 +122,13 @@ class Rectangle(Base):
         """displays a rectangle with #"""
         for i in range(self.height):
             print("{}".format("#"*self.width))
+
+    def __str__(self):
+        """Returns humain readable rectangle form"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id,
+            self.x,
+            self.y,
+            self.width,
+            self.height
+        )

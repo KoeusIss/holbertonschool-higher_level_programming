@@ -158,3 +158,16 @@ class TestAreaFirst(unittest.TestCase):
 class TestDisplayNumberZero(unittest.TestCase):
     """tests display rectangle"""
     pass
+
+class TestStrRepresentation(unittest.TestCase):
+    """tests __str__ overriding methods"""
+
+    def test_str_representation(self):
+        r = Rectangle(4, 6, 2, 1, 12)
+        str_r = r.__str__()
+        self.assertEqual(str_r, "[Rectangle] (12) 2/1 - 4/6")
+
+    def test_str_representation_with_default_value(self):
+        r = Rectangle(4, 6)
+        str_r = r.__str__()
+        self.assertEqual(str_r, "[Rectangle] (11) 0/0 - 4/6")
