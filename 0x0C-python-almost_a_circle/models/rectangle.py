@@ -120,8 +120,9 @@ class Rectangle(Base):
 
     def display(self):
         """displays a rectangle with #"""
+        print("{}".format("\n"*self.y), end="")
         for i in range(self.height):
-            print("{}".format("#"*self.width))
+            print("{}{}".format(" "*self.x, "#"*self.width))
 
     def __str__(self):
         """Returns humain readable rectangle form"""

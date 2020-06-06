@@ -155,7 +155,7 @@ class TestAreaFirst(unittest.TestCase):
         r = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r.area(), 56)
 
-class TestDisplayNumberZero(unittest.TestCase):
+class TestDisplay(unittest.TestCase):
     """tests display rectangle"""
     pass
 
