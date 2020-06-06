@@ -4,8 +4,8 @@ from models.base import *
 from models.rectangle import *
 
 
-class TestRectangle(unittest.TestCase):
-    """Tests the Rectangle class"""
+class TestFirstRectangle(unittest.TestCase):
+    """Tests the first Rectangle class"""
 
     def test_create_instance_with_empty_args(self):
         """tests empty args"""
@@ -71,6 +71,9 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(3, 4, 5, 6, 43)
         self.assertEqual(r.id, 43)
 
+class TestValidateAttributes(unittest.TestCase):
+    """tests validates attributes class"""
+
     def test_raises_type_error_for_non_integer_width(self):
         """tests validation for non integer width"""
         with self.assertRaises(TypeError) as te:
@@ -130,6 +133,3 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError) as te:
             r = Rectangle(3, 4, 5, -6)
             self.assertEqual("y must be >= 0", str(te.exception))
-
-if __name__ == "__main__":
-    unittest.main()
