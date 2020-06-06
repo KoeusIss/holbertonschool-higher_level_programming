@@ -1,5 +1,8 @@
 """TestRectangle module"""
 import unittest
+import unittest.mock
+import sys
+import io
 from models.base import *
 from models.rectangle import *
 
@@ -151,3 +154,7 @@ class TestAreaFirst(unittest.TestCase):
         """tests a rectagle area"""
         r = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r.area(), 56)
+
+class TestDisplayNumberZero(unittest.TestCase):
+    """tests display rectangle"""
+    pass
