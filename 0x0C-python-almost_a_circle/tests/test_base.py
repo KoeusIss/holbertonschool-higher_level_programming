@@ -1,8 +1,7 @@
 """TestBase module"""
 import unittest
-
-
 from models.base import *
+
 
 class TestBase(unittest.TestCase):
     """Tests the base class"""
