@@ -133,3 +133,21 @@ class TestValidateAttributes(unittest.TestCase):
         with self.assertRaises(ValueError) as te:
             r = Rectangle(3, 4, 5, -6)
             self.assertEqual("y must be >= 0", str(te.exception))
+
+class TestAreaFirst(unittest.TestCase):
+    """Tests area first class"""
+
+    def test_area_for_rectangle_with_three_and_two(self):
+        """tests a rectagle area"""
+        r = Rectangle(3, 2)
+        self.assertEqual(r.area(), 6)
+
+    def test_area_for_rectangle_with_two_and_ten(self):
+        """tests a rectagle area"""
+        r = Rectangle(2, 10)
+        self.assertEqual(r.area(), 20)
+
+    def teset_area_for_rectangle_with_all_args(self):
+        """tests a rectagle area"""
+        r = Rectangle(8, 7, 0, 0, 12)
+        self.assertEqual(r.area(), 56)
