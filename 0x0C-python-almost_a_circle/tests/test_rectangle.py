@@ -162,15 +162,21 @@ class TestDisplay(unittest.TestCase):
 class TestStrRepresentation(unittest.TestCase):
     """tests __str__ overriding methods"""
 
+    def setUp(self):
+        self.r = Rectangle(4, 6, 2, 1, 12)
+        self.r0 = Rectangle(4, 6)
+
+    def tearDown(self):
+        del self.r
+        del self.r0
+
     def test_str_representation(self):
-        r = Rectangle(4, 6, 2, 1, 12)
-        str_r = r.__str__()
+        str_r = self.r.__str__()
         self.assertEqual(str_r, "[Rectangle] (12) 2/1 - 4/6")
 
     def test_str_representation_with_default_value(self):
-        r = Rectangle(4, 6)
-        str_r = r.__str__()
-        self.assertEqual(str_r, "[Rectangle] (11) 0/0 - 4/6")
+        str_r = self.r0.__str__()
+        self.assertEqual(str_r, "[Rectangle] (16) 0/0 - 4/6")
 
 class TestUpdate(unittest.TestCase):
     """Tests rectangle update"""
