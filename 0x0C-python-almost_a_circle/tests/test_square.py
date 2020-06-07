@@ -49,3 +49,28 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(ValueError) as te:
             self.s.size = 0
             self.assertEqual("width must be > 0", str(te.exception))
+
+    def test_updates_square_id_by_passing_args_tuple(self):
+        """Test update id from *args tuple"""
+        self.s.update(300)
+        self.assertEqual(self.s.id, 300)
+
+    def test_updates_size_by_passing_args_tuple(self):
+        """Test update size from *args tuple"""
+        self.s.update(300, 1)
+        self.assertEqual(self.s.id, 300)
+        self.assertEqual(self.s.size, 1)
+
+    def test_update_position_using_kwargs_dictionary(self):
+        """Test update position from **kwargs dict"""
+        self.s.update(x=12, y=13)
+        self.assertEqual(self.s.x, 12)
+        self.assertEqual(self.s.y, 13)
+
+    def test_update_square_attribute_using_mixin_args_kwargs(self):
+        """Test square attribute using args, and kwargs"""
+        self.s.update(75, 76, x=77, y=78)
+        self.assertEqual(self.s.id, 75)
+        self.assertEqual(self.s.size, 76)
+        self.assertEqual(self.s.x, 77)
+        self.assertEqual(self.s.y, 78)
