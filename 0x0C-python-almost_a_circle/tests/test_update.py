@@ -37,3 +37,29 @@ class TestUpdate(unittest.TestCase):
         """tests y attribute update"""
         self.r.update(98, 2, 3, 4, 5)
         self.assertEqual(self.r.y, 5)
+
+    def test_update_height_on_explicit_call(self):
+        """tests height update on explicit call"""
+        self.r.update(height=1)
+        self.assertEqual(self.r.height, 1)
+
+    def test_update_two_attribute_width_x_on_explicit_call(self):
+        """test update two attribute on explicit call"""
+        self.r.update(width=1, x=2)
+        self.assertEqual(self.r.width, 1)
+        self.assertEqual(self.r.x, 2)
+
+    def test_update_many_attributes_on_explicit_unorder_call(self):
+        self.r.update(y=1, width=2, x=3, id=89)
+        self.assertEqual(self.r.width, 2)
+        self.assertEqual(self.r.id, 89)
+        self.assertEqual(self.r.x, 3)
+        self.assertEqual(self.r.y, 1)
+
+    def test_update_mixin_args_kwargs(self):
+        self.r.update(100, 101, 102, x=103, y=104)
+        self.assertEqual(self.r.id, 100)
+        self.assertEqual(self.r.width, 101)
+        self.assertEqual(self.r.height, 102)
+        self.assertEqual(self.r.x, 103)
+        self.assertEqual(self.r.y, 104)
