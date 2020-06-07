@@ -74,6 +74,7 @@ class TestFirstRectangle(unittest.TestCase):
         r = Rectangle(3, 4, 5, 6, 43)
         self.assertEqual(r.id, 43)
 
+
 class TestValidateAttributes(unittest.TestCase):
     """tests validates attributes class"""
 
@@ -136,6 +137,7 @@ class TestValidateAttributes(unittest.TestCase):
         with self.assertRaises(ValueError) as te:
             r = Rectangle(3, 4, 5, -6)
             self.assertEqual("y must be >= 0", str(te.exception))
+
 
 class TestAreaFirst(unittest.TestCase):
     """Tests area first class"""

@@ -6,10 +6,10 @@ import sys
 import io
 
 
-
 class TestDisplay(unittest.TestCase):
     """tests display rectangle"""
     pass
+
 
 class TestStrRepresentation(unittest.TestCase):
     """tests __str__ overriding methods"""

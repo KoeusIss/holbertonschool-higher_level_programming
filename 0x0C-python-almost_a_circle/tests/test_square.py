@@ -21,15 +21,31 @@ class TestSquare(unittest.TestCase):
     def test_str_representation_of_the_square(self):
         """test str representation"""
         str_s = self.s.__str__()
-        self.assertEqual(str_s, "[Square] (28) 0/0 - 2")
+        self.assertEqual(str_s, "[Square] (33) 0/0 - 2")
 
-    # def test_instance_attribute_retrieve_size(self):
-    #     """test size retrieve"""
-    #     self.assertEqual(self.s.size, 2)
+    def test_instance_attribute_getting_size(self):
+        """test size getting"""
+        self.assertEqual(self.s.size, 2)
 
-    # def test_super_method_call_from_the_square_class(self):
-    #     """test inhertiance work perfctly"""
-    #     self.s.update(200, 201, 202, 203)
-    #     self.assertEqual(self.s.id, 200)
-    #     self.assertEqual(self.size, 201)
-    #     self.assertEqual(self.)
+    def test_instance_attribute_setting_size(self):
+        """test size setting"""
+        self.s.size = 10
+        self.assertEqual(self.s.size, 10)
+
+    def test_raise_exception_with_non_integer_size(self):
+        """tests validation for non integer size"""
+        with self.assertRaises(TypeError) as te:
+            self.s.size = "10"
+            self.assertEqual("width must be an integer", str(te.exception))
+
+    def test_raise_exception_with_negative_size(self):
+        """tests validation for null  size"""
+        with self.assertRaises(ValueError) as te:
+            self.s.size = -10
+            self.assertEqual("width must be > 0", str(te.exception))
+
+    def test_raise_exception_with_null_size(self):
+        """tests validation for null  size"""
+        with self.assertRaises(ValueError) as te:
+            self.s.size = 0
+            self.assertEqual("width must be > 0", str(te.exception))

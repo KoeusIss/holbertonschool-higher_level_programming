@@ -142,14 +142,24 @@ class Rectangle(Base):
 
         """
         for idx, item in enumerate(args):
-            if idx == 0: self.id = item
-            if idx == 1: self.width = item
-            if idx == 2: self.height = item
-            if idx == 3: self.x = item
-            if idx == 4: self.y = item
+            if idx == 0:
+                self.id = item
+            if idx == 1:
+                self.width = item
+            if idx == 2:
+                self.height = item
+            if idx == 3:
+                self.x = item
+            if idx == 4:
+                self.y = item
         for k, v in kwargs.items():
-            if k == "id": self.id = v
-            if k == "width": self.width = v
-            if k == "height": self.height = v
-            if k == "x": self.x = v
-            if k == "y": self.y = v
+            if k == "id":
+                self.id = v
+            if k == "width":
+                self.width = v
+            if k == "height":
+                self.height = v
+            if k == "x":
+                self.x = v
+            if k == "y":
+                self.y = v

@@ -19,7 +19,13 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """size setter"""
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__size = value
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """Returns humain readable Square form"""
