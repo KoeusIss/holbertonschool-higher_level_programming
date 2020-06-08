@@ -33,5 +33,6 @@ class TestBase(unittest.TestCase):
         r = Rectangle(10, 7, 2, 8, 255)
         dictionary = r.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
-        expected = [{"x": 2, "width": 10, "id": 255, "height": 7, "y": 8}]
-        self.assertEqual(json_dictionary, expected)
+        for j in json_dictionary:
+            self.assertIsInstance(j, str)
+            self.assertEqual(dictionary, json.loads(j))

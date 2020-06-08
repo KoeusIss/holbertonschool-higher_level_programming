@@ -29,4 +29,4 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """returns JSON format representaion"""
-        return str(map(json.dumps, list_dictionaries))
+        return list(map(json.dumps, list_dictionaries))
