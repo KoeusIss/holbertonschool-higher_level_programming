@@ -28,4 +28,4 @@ class TestStrRepresentation(unittest.TestCase):
 
     def test_str_representation_with_default_value(self):
         str_r = self.r0.__str__()
-        self.assertEqual(str_r, "[Rectangle] (7) 0/0 - 4/6")
+        self.assertEqual(str_r, "[Rectangle] (9) 0/0 - 4/6")

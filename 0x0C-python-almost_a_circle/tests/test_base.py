@@ -30,9 +30,18 @@ class TestBase(unittest.TestCase):
         self.assertEqual(self.__b.id, 42)
 
     def test_returns_json_dictionary(self):
+        """tests dictionary serializing"""
         r = Rectangle(10, 7, 2, 8, 255)
         dictionary = r.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
         for j in json_dictionary:
             self.assertIsInstance(j, str)
-            self.assertEqual(dictionary, json.loads(j))
+
+    def test_writing_json_string_to_file(self):
+        """tests writing json string"""
+        r1 = Rectangle(10, 7, 2, 8, 255)
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r1, r2])
+        with open("Rectangle.json", "r") as f:
+            the_file = f.read()
+        self.assertNotEqual(the_file, "")
