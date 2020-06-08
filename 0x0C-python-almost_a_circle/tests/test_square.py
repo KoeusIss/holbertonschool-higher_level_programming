@@ -20,8 +20,9 @@ class TestSquare(unittest.TestCase):
 
     def test_str_representation_of_the_square(self):
         """test str representation"""
+        self.s.id = 1
         str_s = self.s.__str__()
-        self.assertEqual(str_s, "[Square] (36) 0/0 - 2")
+        self.assertEqual(str_s, "[Square] (1) 0/0 - 2")
 
     def test_instance_attribute_getting_size(self):
         """test size getting"""

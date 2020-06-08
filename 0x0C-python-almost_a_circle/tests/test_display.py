@@ -16,7 +16,7 @@ class TestStrRepresentation(unittest.TestCase):
 
     def setUp(self):
         self.r = Rectangle(4, 6, 2, 1, 12)
-        self.r0 = Rectangle(4, 6)
+        self.r0 = Rectangle(4, 6, 0, 0, 1)
 
     def tearDown(self):
         del self.r
@@ -28,4 +28,4 @@ class TestStrRepresentation(unittest.TestCase):
 
     def test_str_representation_with_default_value(self):
         str_r = self.r0.__str__()
-        self.assertEqual(str_r, "[Rectangle] (9) 0/0 - 4/6")
+        self.assertEqual(str_r, "[Rectangle] (1) 0/0 - 4/6")

@@ -46,3 +46,10 @@ class Base:
             l.append(cls.to_dictionary(d))
         with open(str(cls.__name__ + ".json"), "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(l))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of JSON representation"""
+        if json_string is None or json_string == '':
+            return []
+        return json.dumps(json_string)

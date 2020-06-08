@@ -45,3 +45,18 @@ class TestBase(unittest.TestCase):
         with open("Rectangle.json", "r") as f:
             the_file = f.read()
         self.assertNotEqual(the_file, "")
+
+    def test_from_json_string_method(self):
+        """tests from_json_string method"""
+        list_input = [
+            {'id': 89, 'width': 10, 'height': 4},
+            {'id': 7, 'width': 1, 'height': 7},
+        ]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        expected_output = [
+            {'height': 4, 'width': 10, 'id': 89},
+            {'height': 7, 'width': 1, 'id': 7}
+        ]
+        self.assertEqual(expected_output, list_input)
+
