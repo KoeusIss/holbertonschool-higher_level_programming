@@ -25,8 +25,6 @@ class Square(Rectangle):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__size = value
-        self.width = value
-        self.height = value
 
     def __str__(self):
         """Returns humain readable Square form"""
