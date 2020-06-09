@@ -53,7 +53,7 @@ class Base:
         """returns the list of JSON representation"""
         if json_string is None or json_string == '':
             return []
-        return json.dumps(json_string)
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
