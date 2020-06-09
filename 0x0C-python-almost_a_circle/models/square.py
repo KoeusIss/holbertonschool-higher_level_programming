@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Square module"""
 from models.base import *
 from models.rectangle import *
 
