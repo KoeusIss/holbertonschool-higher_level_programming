@@ -58,6 +58,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """Create from dictionnary"""
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         elif cls.__name__ == "Square":
@@ -66,6 +67,20 @@ class Base:
             dummy = None
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Load from file"""
+        filename = cls.__name__ + ".json"
+        ll = []
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                a_dictionary = cls.from_json_string(f.read())
+                for row in a_dictionary:
+                    ll.append(cls.create(**row))
+                return ll
+        except IOError:
+            return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
