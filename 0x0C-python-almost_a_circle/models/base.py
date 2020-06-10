@@ -86,10 +86,31 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """Serialize a class to csv"""
         filename = cls.__name__ + ".csv"
-        if cls.__name__ == "Rectangle":
-            ll = [[x.id, x.width, x.height, x.x, x.y] for x in list_objs]
-        else:
-            ll = [[x.id, x.size, x.x, x.y] for x in list_objs]
-        with open(filename, "w") as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow(ll)
+        attributes = ["id", "x", "y"]
+        with open(filename, "w", newline="") as f:
+            if list_objs is None or list_objs == []:
+                f.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    attributes = ["id","width", "height", "x", "y"]
+                else:
+                    attributes = ["id","size", "x", "y"]
+                writer = csv.DictWriter(f, fieldnames=attributes)
+                for item in list_objs:
+                    writer.writerow(item.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserialize csv file"""
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "w") as f:
+                reader = csv.DictReader(f)
+                ll = []
+                for row in reader:
+                    for k, v in row.items():
+                        row[k] = int(v)
+                    ll.append(row)
+                return [cls.create(**item) for item in ll]
+        except FileNotFoundError:
+            return []
