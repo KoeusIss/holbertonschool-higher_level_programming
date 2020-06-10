@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base Module"""
 import json
+import csv
 
 
 class Base:
@@ -57,7 +58,23 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """returns instance with all atributes already set"""
-        dummy = cls(1, 1)
-        dummy.cls.update(**dictinary)
+        if cls is Rectangle:
+            dummy = Rectangle(1, 1)
+        elif cls is Square:
+            dummy = Square(1)
+        else:
+            dummy = None
+        dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serialize a class to csv"""
+        filename = cls.__name__ + ".csv"
+        if cls.__name__ == "Rectangle":
+            ll = [[x.id, x.width, x.height, x.x, x.y] for x in list_objs]
+        else:
+            ll = [[x.id, x.size, x.x, x.y] for x in list_objs]
+        with open(filename, "w") as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(ll)
