@@ -1,4 +1,4 @@
--- Task 0x12: Retrive temperatures average from MySQL server
+-- Task 0x13: Retrive temperatures average from MySQL server
 -- Select temperature avergae by city from hbtn_0c_0.temperatures in summer
 SELECT city, AVG(value) AS avg_temp
 FROM temperatures
