@@ -5,10 +5,8 @@ CREATE TABLE IF NOT EXISTS `second_table`(
     `name` VARCHAR(256),
     `score` INT
 );
-
 -- Insert multiple records to hbtn_0c_0.second_table
 INSERT INTO `second_table`
-    (`id`, `name`, `score`)
 VALUES
     (1, "Jhon", 10),
     (2, "Alex", 3),
