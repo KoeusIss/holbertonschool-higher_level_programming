@@ -1,0 +1,7 @@
+-- Task 0x04: Create table in MySQL server
+
+-- Create table hbtn_0d_2.id_not_null
+CREATE TABLE IF NOT EXISTS `id_not_null` (
+    `id`    INT DEFAULT 1,
+    `name`  VARCHAR(256)
+);
