@@ -6,13 +6,9 @@ import MySQLdb
 import sys
 
 
-def main():
-    """Grab data from database
+def select_states():
+    """Grabs states from database"""
 
-    Args:
-        argv (tuple): a tuple of given arguments should be:
-                    username, password and database
-    """
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -32,4 +28,4 @@ def main():
     db.close()
 
 if __name__ == "__main__":
-    main()
+    select_states()
