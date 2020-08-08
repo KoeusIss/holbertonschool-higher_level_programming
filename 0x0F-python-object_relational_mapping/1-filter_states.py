@@ -27,7 +27,8 @@ def filter_states():
                 )
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        if row[1].startswith("N"):
+            print(row)
     cur.close()
     db.close()
 
