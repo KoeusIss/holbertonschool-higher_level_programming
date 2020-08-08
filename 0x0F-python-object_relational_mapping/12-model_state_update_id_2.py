@@ -8,7 +8,7 @@ from model_state import Base, State
 import sys
 
 
-def create_state():
+def update_state():
     """Fetches all states"""
     username = sys.argv[1]
     password = sys.argv[2]
@@ -21,12 +21,10 @@ def create_state():
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-    new_state = State(name='Louisiana')
-    state = session.add(new_state)
-    state = session.query(State).filter_by(name='Louisiana').first()
-    print("{}".format(state.id))
+    session.query(State).filter_by(id=2).\
+        update({State.name: 'New Mexico'}, synchronize_session=False)
     session.commit()
     session.close()
 
 if __name__ == "__main__":
-    create_state()
+    update_state()
