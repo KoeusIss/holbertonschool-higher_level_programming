@@ -22,7 +22,7 @@ def fetch_all():
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-    state = session.query(State).filter_by(name = searched).first()
+    state = session.query(State).filter_by(name=searched).first()
     if state:
         print("{}".format(state.id))
     else:
