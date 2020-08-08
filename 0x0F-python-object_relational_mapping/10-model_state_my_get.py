@@ -23,7 +23,10 @@ def fetch_all():
     Session.configure(bind=engine)
     session = Session()
     state = session.query(State).filter_by(name = searched).first()
-    print("{}".format(state.id))
+    if state:
+        print("{}".format(state.id))
+    else:
+        print("Not found")
     session.close()
 
 if __name__ == "__main__":
