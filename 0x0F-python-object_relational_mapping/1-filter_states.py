@@ -22,13 +22,12 @@ def filter_states():
     cur = db.cursor()
     cur.execute("SELECT *\
                 FROM states\
-                WHERE name LIKE 'N%'\
+                WHERE name LIKE BINARY 'N%'\
                 ORDER BY id ASC"
                 )
     rows = cur.fetchall()
     for row in rows:
-        if row[1].startswith("N"):
-            print(row)
+        print(row)
     cur.close()
     db.close()
 

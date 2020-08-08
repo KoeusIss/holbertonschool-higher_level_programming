@@ -21,11 +21,10 @@ def find_state():
                          db=database
                          )
     cur = db.cursor()
-    cur.execute("SELECT *\
+    cur.execute("""SELECT *\
                 FROM states\
-                WHERE name = %(searched_name)s\
-                ORDER BY id ASC",
-                {'searched_name': searched}
+                WHERE name LIKE BINARY '{}'\
+                ORDER BY id ASC""".format(searched)
                 )
     rows = cur.fetchall()
     for row in rows:
