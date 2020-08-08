@@ -4,8 +4,8 @@ StateCity module
 """
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from model_state import Base, State
-from model_city import City
+from relationship_state import Base, State
+from relationship_city import City
 import sys
 
 
@@ -23,10 +23,9 @@ def fetch_states_cities():
     Session.configure(bind=engine)
     session = Session()
 
-    for state in session.query(State).all():
+    for state in session.query(State).order_by(State.id).all():
         print("{}: {}".format(state.id, state.name))
-        for city in session.query(City).\
-                filter(City.state_id == state.id).all():
+        for city in state.cities:
             print("\t{}: {}".format(city.id, city.name))
 
     session.commit()
