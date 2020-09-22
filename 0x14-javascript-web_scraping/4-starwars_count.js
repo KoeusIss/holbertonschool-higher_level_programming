@@ -5,9 +5,10 @@ request(apiUrl + '/films', (error, response, body) => {
   if (error) {
     console.log(error);
   } else {
+    const results = JSON.parse(body).results;
     let counter = 0;
-    for (const row of JSON.parse(body).results) {
-      if (row.characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
+    for (const movie of results) {
+      if (movie.characters.find(value => value.endsWith('18/'))) {
         counter++;
       }
     }
