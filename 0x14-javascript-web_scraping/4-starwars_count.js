@@ -2,9 +2,7 @@
 const request = require('request');
 const apiUrl = 'https://swapi-api.hbtn.io/api';
 request(apiUrl + '/films', (error, response, body) => {
-  if (error) {
-    console.log(error);
-  } else {
+  if (!error) {
     const results = JSON.parse(body).results;
     let counter = 0;
     for (const movie of results) {
