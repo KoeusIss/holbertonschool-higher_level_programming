@@ -1,1 +1,1 @@
-$('HEADER').css('color', '#ff0000');
+window.$('HEADER').css('color', '#ff0000');

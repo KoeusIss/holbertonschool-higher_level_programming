@@ -1,2 +1,2 @@
-let theHeader = document.querySelector('HEADER')
-theHeader.style.color = '#ff0000'
+const theHeader = document.querySelector('HEADER');
+theHeader.style.color = '#ff0000';
